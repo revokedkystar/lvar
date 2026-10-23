@@ -1,43 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { Icon, type IconName } from "./components/icons";
+import { Icon } from "./components/icons";
 
 const phone = "07456 799745";
 const facebook = "https://www.facebook.com/leisurevehiclesandautorepairs";
 const address =
   "Unit 1 School Road Business Park, Newton Abbot, Devon, TQ12 2JU, UK";
-
-const services: {
-  number: string;
-  icon: IconName;
-  title: string;
-  description: string;
-  detail: string;
-}[] = [
+const mapLocation = {
+  latitude: 50.5299899,
+  longitude: -3.6087372,
+};
+const mapEmbedUrl = `https://maps.google.com/maps?q=${mapLocation.latitude},${mapLocation.longitude}&z=16&output=embed`;
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapLocation.latitude},${mapLocation.longitude}`;
+const facebookReviews = [
   {
-    number: "01",
-    icon: "search",
-    title: "Pre-purchase checks",
-    description:
-      "A clear-eyed look at a car, van or motorhome before you commit to buying.",
-    detail: "From £40",
+    url: "https://www.facebook.com/Ry.Hollis/posts/pfbid02GvaFQWFD9oyPz7ySvztjN4srzZtjy3kjFxAgPJZ7vUGHMZvbmy8cK2rUFfitP3Pbl",
+    height: 228,
   },
   {
-    number: "02",
-    icon: "van",
-    title: "Motorhome habitation",
-    description:
-      "Practical checks for gas, electrics, water, heating and the visible condition of your home on wheels.",
-    detail: "Gas-It certified",
+    url: "https://www.facebook.com/leese.spencer/posts/pfbid02eTcLYR9cuyxkHeDH3zm7XSLRDzB1qHrVSAvi5jUPtnr85MYMPCusPW4DStD14qShl",
+    height: 253,
   },
   {
-    number: "03",
-    icon: "wrench",
-    title: "Servicing & repairs",
-    description:
-      "Interim and full services, MOT preparation, diagnostics and everyday mechanical repairs.",
-    detail: "Cars, vans & leisure vehicles",
+    url: "https://www.facebook.com/dean.percival.790/posts/pfbid0uthN3UDXRVdp3nfuNicbtecHZeKwJUxN67vcLH1YR6KvHkEAHsuuiVJC4u8FKUc5l",
+    height: 266,
   },
 ];
 
@@ -148,7 +135,7 @@ export default function Home() {
               </article>
               <article className="offer-card">
                 <div className="offer-art offer-art-portrait">
-                  <Image src="/img/update.jpg" alt="Autumn and Winter car check artwork" fill sizes="(max-width: 720px) 100vw, 33vw" />
+                  <Image src="/img/update.jpg" alt="Autumn and Winter car check artwork" fill sizes="(max-width: 720px) 100vw, 33vw" loading="eager" />
                 </div>
                 <div className="offer-content">
                   <span className="offer-label">SEASONAL CAR CHECK</span>
@@ -173,31 +160,33 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="services section-pad" id="services">
+        <section className="customer-reviews section-pad" aria-labelledby="customer-reviews-heading">
           <div className="container">
-            <div className="services-heading-row">
-              <SectionHeading eyebrow="What we work on" title="Care for the journeys ahead">
-                From a pre-purchase check to routine servicing, get practical help for the vehicle you rely on.
-              </SectionHeading>
-              <Link className="text-link reveal" href="/services">
-                All services <Icon name="arrow-up-right" />
-              </Link>
+            <div className="customer-reviews-heading">
+              <p className="eyebrow">Customer feedback</p>
+              <h2 id="customer-reviews-heading">Reviews from Facebook</h2>
             </div>
-            <div className="service-grid reveal-stagger">
-              {services.map((service) => (
-                <Link className="service-card" href="/services" key={service.number}>
-                  <div className="service-card-top">
-                    <span className="service-number">{service.number}</span>
-                    <Icon name={service.icon} />
-                  </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  <div className="service-card-bottom">
-                    <span>{service.detail}</span>
-                    <Icon name="arrow-up-right" />
-                  </div>
-                </Link>
-              ))}
+            <div className="facebook-reviews-grid">
+              {facebookReviews.map((review, index) => {
+                const embedUrl = `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(review.url)}&show_text=true&width=500`;
+
+                return (
+                  <article className="facebook-review" key={review.url}>
+                    <iframe
+                      title={`Facebook customer review ${index + 1}`}
+                      src={embedUrl}
+                      width="500"
+                      height={review.height}
+                      loading="lazy"
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                    <a href={review.url} target="_blank" rel="noreferrer">
+                      View post on Facebook
+                    </a>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -207,25 +196,39 @@ export default function Home() {
             <div className="location-map reveal">
               <iframe
                 title={`Map showing ${address}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+                src={mapEmbedUrl}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
+                style={{
+                  display: "block",
+                  width: "100%",
+                  height: "clamp(320px, 42vw, 480px)",
+                  border: 0,
+                }}
               />
-              <p>{address}</p>
+              <a href={mapLink} target="_blank" rel="noreferrer">
+                Open interactive map
+              </a>
             </div>
             <div className="approach-copy">
-              <SectionHeading eyebrow="A local garage, with flexibility" title="Good work starts with a proper conversation">
-                Not sure what your vehicle needs? Explain what is happening and get clear advice on the next step.
-              </SectionHeading>
-              <ul className="reason-list reveal-stagger">
-                {reasons.map((reason) => (
-                  <li key={reason}><Icon name="check" /> {reason}</li>
-                ))}
-              </ul>
-              <Link className="button button-outline reveal" href="/services">
-                How we work <Icon name="arrow-up-right" />
-              </Link>
+              <div className="approach-intro-row">
+                <SectionHeading eyebrow="A local garage, with flexibility" title="Good work starts with a proper conversation">
+                  Not sure what your vehicle needs? Explain what is happening and get clear advice on the next step.
+                </SectionHeading>
+                <div className="approach-details">
+                  <address className="approach-address">
+                    <span className="eyebrow">Visit us</span>
+                    <span>{address}</span>
+                  </address>
+                  <ul className="reason-list reveal-stagger">
+                    {reasons.map((reason) => (
+                      <li key={reason}><Icon name="check" /> {reason}</li>
+                    ))}
+                  </ul>
+                  <Link className="button button-outline reveal" href="/services">
+                    How we work <Icon name="arrow-up-right" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -256,19 +259,6 @@ export default function Home() {
                 Find us on Facebook <Icon name="arrow-up-right" />
               </a>
             </div>
-          </div>
-        </section>
-
-        <section className="reviews section-pad">
-          <div className="container reviews-inner reveal">
-            <div>
-              <p className="eyebrow">Your experience matters</p>
-              <h2>Good service is built on trust.</h2>
-              <p>We don’t publish reviews without a verified source. Ask about the work you need, or find the business on Facebook.</p>
-            </div>
-            <a className="button button-outline" href={facebook} target="_blank" rel="noreferrer">
-              Find us on Facebook <Icon name="arrow-up-right" />
-            </a>
           </div>
         </section>
 

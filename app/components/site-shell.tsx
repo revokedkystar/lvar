@@ -10,7 +10,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="Leisure Vehicle and Auto Repairs home">
-          <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={560} height={112} />
+          <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={210} height={43} />
         </Link>
         <nav className="main-nav" aria-label="Main navigation">
           <Link href="/services">Services</Link>
@@ -42,7 +42,7 @@ export function SiteFooter() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link className="brand" href="/">
-              <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={560} height={112} />
+              <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={210} height={43} />
             </Link>
             <p>Independent vehicle care for cars, vans, motorhomes and campervans.</p>
             <span className="footer-area">Newton Abbot · Torbay &amp; surrounding areas</span>

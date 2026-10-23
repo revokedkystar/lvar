@@ -90,36 +90,6 @@ summary:focus-visible {
   height: auto;
 }
 
-.brand-mark {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  color: var(--gold);
-}
-
-.brand-mark svg {
-  width: 19px;
-  height: 19px;
-}
-
-.brand-name {
-  display: flex;
-  flex-direction: column;
-  color: #f6f4ee;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.115em;
-  line-height: 1.5;
-}
-
-.brand-name span {
-  color: var(--gold);
-  font-size: 9px;
-  letter-spacing: 0.14em;
-}
-
 .main-nav {
   display: flex;
   align-items: center;
@@ -529,10 +499,11 @@ summary:focus-visible {
   display: flex;
   height: 100%;
   flex-direction: column;
+  min-width: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   background: #171717;
-  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .offer-art {
@@ -562,7 +533,6 @@ summary:focus-visible {
 
 .offer-card:hover,
 .service-card:hover {
-  transform: translateY(-5px);
   border-color: rgba(212, 175, 55, 0.58);
 }
 
@@ -570,8 +540,14 @@ summary:focus-visible {
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
 }
 
-.offer-card:hover .offer-art img {
+.offer-card:hover .offer-art img,
+.offer-card:focus-within .offer-art img {
   transform: scale(1.035);
+}
+
+.offer-card:focus-within {
+  border-color: rgba(212, 175, 55, 0.58);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
 }
 
 .offer-featured {
@@ -663,7 +639,7 @@ summary:focus-visible {
   padding: 23px;
   border: 1px solid var(--line);
   background: linear-gradient(145deg, #161616, #111);
-  transition: border-color 180ms ease, transform 180ms ease;
+  transition: border-color 180ms ease;
 }
 
 .service-card-top,
@@ -715,22 +691,61 @@ summary:focus-visible {
   background: #121212;
 }
 
-.approach-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
-  gap: 90px;
+.customer-reviews {
+  background: #111;
 }
 
-.approach-visual {
-  position: relative;
-  display: flex;
-  min-height: 420px;
-  align-items: flex-end;
+.customer-reviews-heading {
+  margin-bottom: 28px;
+}
+
+.customer-reviews-heading h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.customer-reviews-heading .eyebrow {
+  margin: 0 0 9px;
+}
+
+.facebook-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+
+.facebook-review {
+  min-width: 0;
   overflow: hidden;
-  padding: 27px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  background: radial-gradient(ellipse at 53% 50%, #29261b, #151512 58%, #111 100%);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.facebook-review iframe {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border: 0;
+  overflow: hidden;
+}
+
+.facebook-review > a {
+  display: block;
+  padding: 10px 14px;
+  background: #151515;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 36px;
 }
 
 .location-map {
@@ -742,91 +757,63 @@ summary:focus-visible {
 .location-map iframe {
   display: block;
   width: 100%;
-  height: 420px;
+  height: clamp(320px, 42vw, 480px);
   border: 0;
 }
 
-.location-map p {
-  margin: 0;
-  padding: 15px 18px;
-  border-top: 1px solid var(--line);
-  color: #c4c1b7;
-  font-size: 11px;
-}
-
-.approach-visual::before,
-.approach-visual::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 83%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(212, 175, 55, 0.08);
-  border-radius: 50%;
-  content: "";
-  transform: translate(-50%, -50%);
-}
-
-.approach-visual::after {
-  width: 60%;
-}
-
-.approach-lines {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 37px 37px;
-  mask-image: linear-gradient(135deg, transparent 10%, #000);
-}
-
-.approach-stamp {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  width: 146px;
-  height: 146px;
-  flex-direction: column;
+.location-map > a {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.48);
-  border-radius: 50%;
+  margin: 12px 18px 15px;
   color: var(--gold);
-  text-align: center;
-  transform: translate(-50%, -50%);
-}
-
-.approach-stamp svg {
-  width: 25px;
-  height: 25px;
-}
-
-.approach-stamp span {
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  line-height: 1.6;
 }
 
-.approach-location {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  line-height: 1.8;
+.location-map > a svg {
+  width: 13px;
+  height: 13px;
 }
 
-.approach-location span {
-  color: #8e8d86;
-  font-size: 8px;
-}
-
-.approach-copy .section-heading {
+.approach-intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
+  align-items: start;
+  gap: 44px;
   margin-bottom: 25px;
+}
+
+.approach-intro-row .section-heading {
+  margin-bottom: 0;
+}
+
+.approach-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.approach-address {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  color: #c4c1b7;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.approach-address .eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.approach-details .reason-list {
+  margin: 20px 0 24px;
 }
 
 .reason-list {
@@ -1504,9 +1491,15 @@ summary:focus-visible {
   }
 
   .approach-grid,
-  .social-grid {
+  .social-grid,
+  .facebook-reviews-grid {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .approach-intro-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .location-map iframe {
@@ -1611,19 +1604,6 @@ summary:focus-visible {
     width: 145px;
   }
 
-  .brand-name {
-    font-size: 8px;
-  }
-
-  .brand-name span {
-    font-size: 7px;
-  }
-
-  .brand-mark {
-    width: 32px;
-    height: 32px;
-  }
-
   .mobile-menu {
     margin-right: 15px;
   }
@@ -1655,12 +1635,9 @@ summary:focus-visible {
     transition-duration: 0.01ms !important;
   }
 
-  .offer-card:hover,
-  .service-card:hover {
+  .offer-card:hover .offer-art img,
+  .offer-card:focus-within .offer-art img {
     transform: none;
   }
 
-  .offer-card:hover .offer-art img {
-    transform: none;
-  }
 }
