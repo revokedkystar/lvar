@@ -4,7 +4,9 @@ import type { ReactNode } from "react";
 import { Icon, type IconName } from "./components/icons";
 
 const phone = "07456 799745";
-const whatsapp = "https://wa.me/447456799745";
+const facebook = "https://www.facebook.com/leisurevehiclesandautorepairs";
+const address =
+  "Unit 1 School Road Business Park, Newton Abbot, Devon, TQ12 2JU, UK";
 
 const services: {
   number: string;
@@ -88,7 +90,7 @@ export default function Home() {
                 cases.
               </p>
               <div className="hero-actions reveal">
-                <a className="button button-gold" href={whatsapp}>
+                <a className="button button-gold" href={facebook} target="_blank" rel="noreferrer">
                   Book an inspection <Icon name="arrow-up-right" />
                 </a>
                 <a className="button button-outline" href="tel:+447456799745">
@@ -141,7 +143,7 @@ export default function Home() {
                   <span className="offer-label">PRE-PURCHASE INSPECTIONS</span>
                   <div className="offer-price">£40<span> from</span></div>
                   <p>Get a vehicle checked before you buy. Cars, vans and motorhomes.</p>
-                  <a href={whatsapp}>Ask about an inspection <Icon name="arrow-up-right" /></a>
+                  <a href={facebook} target="_blank" rel="noreferrer">Ask about an inspection <Icon name="arrow-up-right" /></a>
                 </div>
               </article>
               <article className="offer-card">
@@ -152,7 +154,7 @@ export default function Home() {
                   <span className="offer-label">SEASONAL CAR CHECK</span>
                   <div className="offer-title">Ready for the road.</div>
                   <p>Ask about an Autumn or Winter check for the essentials before colder weather.</p>
-                  <a href={whatsapp}>Ask about a seasonal check <Icon name="arrow-up-right" /></a>
+                  <a href={facebook} target="_blank" rel="noreferrer">Ask about a seasonal check <Icon name="arrow-up-right" /></a>
                 </div>
               </article>
               <article className="offer-card">
@@ -163,7 +165,7 @@ export default function Home() {
                   <span className="offer-label">HABITATION CHECKS</span>
                   <div className="offer-title">One check. More peace of mind.</div>
                   <p>Ask about combining your habitation check with other vehicle work.</p>
-                  <a href={whatsapp}>Request a quote <Icon name="arrow-up-right" /></a>
+                  <a href={facebook} target="_blank" rel="noreferrer">Request a quote <Icon name="arrow-up-right" /></a>
                 </div>
               </article>
             </div>
@@ -202,10 +204,15 @@ export default function Home() {
 
         <section className="approach section-pad" id="about">
           <div className="container approach-grid">
-            <div className="approach-visual reveal">
-              <div className="approach-stamp"><Icon name="wrench" /><span>LOCAL<br />VEHICLE<br />CARE</span></div>
-              <p className="approach-location">NEWTON ABBOT<br /><span>DEVON · SOUTH WEST</span></p>
-              <div className="approach-lines" />
+            <div className="location-map reveal">
+              <iframe
+                title={`Map showing ${address}`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <p>{address}</p>
             </div>
             <div className="approach-copy">
               <SectionHeading eyebrow="A local garage, with flexibility" title="Good work starts with a proper conversation">
@@ -229,8 +236,8 @@ export default function Home() {
               <p className="eyebrow">Keep in touch</p>
               <h2>Local advice.<br /><span>Useful updates.</span></h2>
               <p>For the latest business updates and appointment enquiries, get in touch directly.</p>
-              <a className="button button-gold" href={whatsapp}>
-                Message on WhatsApp <Icon name="arrow-up-right" />
+              <a className="button button-gold" href={facebook} target="_blank" rel="noreferrer">
+                Message us on Facebook <Icon name="arrow-up-right" />
               </a>
             </div>
             <div className="social-card reveal">
@@ -245,7 +252,7 @@ export default function Home() {
                 <span className="social-post-rule" />
                 <span className="social-post-meta">Newton Abbot · Torbay &amp; surrounding areas</span>
               </div>
-              <a href="https://www.facebook.com/leisurevehiclesandautorepairs" target="_blank" rel="noreferrer">
+              <a href={facebook} target="_blank" rel="noreferrer">
                 Find us on Facebook <Icon name="arrow-up-right" />
               </a>
             </div>
@@ -259,7 +266,7 @@ export default function Home() {
               <h2>Good service is built on trust.</h2>
               <p>We don’t publish reviews without a verified source. Ask about the work you need, or find the business on Facebook.</p>
             </div>
-            <a className="button button-outline" href="https://www.facebook.com/leisurevehiclesandautorepairs" target="_blank" rel="noreferrer">
+            <a className="button button-outline" href={facebook} target="_blank" rel="noreferrer">
               Find us on Facebook <Icon name="arrow-up-right" />
             </a>
           </div>
@@ -272,7 +279,7 @@ export default function Home() {
               <h2>Tell us what you need.<br /><span>We’ll take it from there.</span></h2>
             </div>
             <div className="contact-cta-actions">
-              <a className="button button-gold" href={whatsapp}>Book or ask a question <Icon name="arrow-up-right" /></a>
+              <a className="button button-gold" href={facebook} target="_blank" rel="noreferrer">Book or ask a question <Icon name="arrow-up-right" /></a>
               <a className="cta-phone" href="tel:+447456799745"><Icon name="phone" /> {phone}</a>
             </div>
           </div>

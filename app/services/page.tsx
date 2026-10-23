@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Icon } from "../components/icons";
 
+const facebook = "https://www.facebook.com/leisurevehiclesandautorepairs";
+
 export const metadata: Metadata = {
   title: "Vehicle Services in Newton Abbot & Torbay",
   description:
@@ -43,7 +45,7 @@ export default function ServicesPage() {
             <p className="page-lead reveal">
               Inspections, servicing and repairs for cars, vans, motorhomes and campervans. Tell us what you need and we’ll help you find the right next step.
             </p>
-            <a className="button button-gold reveal" href="https://wa.me/447456799745">Ask about a service <Icon name="arrow-up-right" /></a>
+            <a className="button button-gold reveal" href={facebook} target="_blank" rel="noreferrer">Ask about a service on Facebook <Icon name="arrow-up-right" /></a>
           </div>
           <Image
             className="services-feature-image reveal"
@@ -65,7 +67,7 @@ export default function ServicesPage() {
               <p>Buying a vehicle is a big decision. An independent check can help identify visible faults, wear and potential issues before you commit.</p>
               <div className="detail-tags"><span>Cars</span><span>Vans</span><span>Motorhomes</span></div>
             </div>
-            <div className="detail-aside"><strong>From £40</strong><span>Price confirmed when you enquire.</span><a href="https://wa.me/447456799745">Book an inspection <Icon name="arrow-up-right" /></a></div>
+            <div className="detail-aside"><strong>From £40</strong><span>Price confirmed when you enquire.</span><a href={facebook} target="_blank" rel="noreferrer">Book an inspection <Icon name="arrow-up-right" /></a></div>
           </article>
 
           <article className="detail-card reveal" id="habitation">
@@ -77,7 +79,7 @@ export default function ServicesPage() {
                 {habitationChecks.map((item) => <li key={item}><Icon name="check" />{item}</li>)}
               </ul>
             </div>
-            <div className="detail-aside"><span className="cert-mark"><Icon name="check" /> GAS-IT CERTIFIED</span><span>Ask about combining habitation and vehicle work.</span><a href="https://wa.me/447456799745">Ask for a quote <Icon name="arrow-up-right" /></a></div>
+            <div className="detail-aside"><span className="cert-mark"><Icon name="check" /> GAS-IT CERTIFIED</span><span>Ask about combining habitation and vehicle work.</span><a href={facebook} target="_blank" rel="noreferrer">Ask for a quote <Icon name="arrow-up-right" /></a></div>
           </article>
 
           <article className="detail-card reveal" id="servicing">
@@ -101,7 +103,7 @@ export default function ServicesPage() {
               </div>
               <p className="service-qualifier">Parts and checks vary by make, model and service schedule. Brake fluid is tested and changed where needed.</p>
             </div>
-            <div className="detail-aside"><span>Cars · vans · leisure vehicles</span><a href="https://wa.me/447456799745">Ask about servicing <Icon name="arrow-up-right" /></a></div>
+            <div className="detail-aside"><span>Cars · vans · leisure vehicles</span><a href={facebook} target="_blank" rel="noreferrer">Ask about servicing <Icon name="arrow-up-right" /></a></div>
           </article>
 
           <article className="detail-card reveal" id="repairs">
@@ -111,7 +113,7 @@ export default function ServicesPage() {
               <p>Help with common repairs, investigating warning lights and getting your vehicle ready for the road.</p>
               <div className="detail-tags"><span>MOT preparation &amp; repairs</span><span>Diagnostics</span><span>Brakes &amp; clutches</span><span>Timing belts</span><span>Gas testing</span><span>240V testing</span><span>Seasonal checks</span></div>
             </div>
-            <div className="detail-aside"><span>Tell us the symptoms and vehicle details.</span><a href="https://wa.me/447456799745">Discuss a repair <Icon name="arrow-up-right" /></a></div>
+            <div className="detail-aside"><span>Tell us the symptoms and vehicle details.</span><a href={facebook} target="_blank" rel="noreferrer">Discuss a repair <Icon name="arrow-up-right" /></a></div>
           </article>
         </div>
       </section>
@@ -130,7 +132,7 @@ export default function ServicesPage() {
         <div className="container contact-cta-inner reveal">
           <div><p className="eyebrow">Let’s talk it through</p><h2>Not sure what you need?<br /><span>Start with a quick enquiry.</span></h2></div>
           <div className="contact-cta-actions">
-            <a className="button button-gold" href="https://wa.me/447456799745">Message on WhatsApp <Icon name="arrow-up-right" /></a>
+            <a className="button button-gold" href={facebook} target="_blank" rel="noreferrer">Message us on Facebook <Icon name="arrow-up-right" /></a>
             <a className="cta-phone" href="tel:+447456799745"><Icon name="phone" /> 07456 799745</a>
           </div>
         </div>

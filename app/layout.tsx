@@ -23,8 +23,10 @@ const localBusiness = {
     "Vehicle servicing, repairs, diagnostics and inspections for cars, vans, motorhomes and campervans. Garage base in Newton Abbot, with mobile visits case dependent.",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Unit 1 School Road Business Park",
     addressLocality: "Newton Abbot",
     addressRegion: "Devon",
+    postalCode: "TQ12 2JU",
     addressCountry: "GB",
   },
   areaServed: ["Newton Abbot", "Torbay", "Devon"],

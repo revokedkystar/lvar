@@ -1,15 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "./icons";
 
 const phone = "07456 799745";
+const facebook = "https://www.facebook.com/leisurevehiclesandautorepairs";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="Leisure Vehicle and Auto Repairs home">
-          <span className="brand-mark"><Icon name="wrench" /></span>
-          <span className="brand-name">LEISURE VEHICLE<span>&amp; AUTO REPAIRS</span></span>
+          <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={560} height={112} />
         </Link>
         <nav className="main-nav" aria-label="Main navigation">
           <Link href="/services">Services</Link>
@@ -41,8 +42,7 @@ export function SiteFooter() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link className="brand" href="/">
-              <span className="brand-mark"><Icon name="wrench" /></span>
-              <span className="brand-name">LEISURE VEHICLE<span>&amp; AUTO REPAIRS</span></span>
+              <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={560} height={112} />
             </Link>
             <p>Independent vehicle care for cars, vans, motorhomes and campervans.</p>
             <span className="footer-area">Newton Abbot · Torbay &amp; surrounding areas</span>
@@ -57,7 +57,7 @@ export function SiteFooter() {
           <div className="footer-contact">
             <span className="footer-label">GET IN TOUCH</span>
             <a href="tel:+447456799745">{phone}</a>
-            <a href="https://wa.me/447456799745">WhatsApp enquiries <Icon name="arrow-up-right" /></a>
+            <a href={facebook} target="_blank" rel="noreferrer">Facebook enquiries <Icon name="arrow-up-right" /></a>
             <span>Mobile service available, case dependent</span>
           </div>
         </div>

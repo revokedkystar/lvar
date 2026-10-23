@@ -81,8 +81,13 @@ summary:focus-visible {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
   flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: 210px;
+  height: auto;
 }
 
 .brand-mark {
@@ -522,13 +527,12 @@ summary:focus-visible {
 
 .offer-card {
   display: flex;
-  min-height: 235px;
+  height: 100%;
   flex-direction: column;
-  align-items: flex-start;
   overflow: hidden;
   border: 1px solid var(--line);
   background: #171717;
-  transition: border-color 180ms ease, transform 180ms ease;
+  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
 }
 
 .offer-art {
@@ -541,12 +545,9 @@ summary:focus-visible {
   background: #090909;
 }
 
-.offer-art-portrait {
-  aspect-ratio: 1122 / 1402;
-}
-
 .offer-art img {
   object-fit: contain;
+  transition: transform 420ms ease;
 }
 
 .offer-content {
@@ -555,13 +556,22 @@ summary:focus-visible {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
+  min-height: 286px;
   padding: 22px;
 }
 
 .offer-card:hover,
 .service-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   border-color: rgba(212, 175, 55, 0.58);
+}
+
+.offer-card:hover {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+.offer-card:hover .offer-art img {
+  transform: scale(1.035);
 }
 
 .offer-featured {
@@ -721,6 +731,27 @@ summary:focus-visible {
   padding: 27px;
   border: 1px solid rgba(212, 175, 55, 0.2);
   background: radial-gradient(ellipse at 53% 50%, #29261b, #151512 58%, #111 100%);
+}
+
+.location-map {
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #151515;
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+}
+
+.location-map p {
+  margin: 0;
+  padding: 15px 18px;
+  border-top: 1px solid var(--line);
+  color: #c4c1b7;
+  font-size: 11px;
 }
 
 .approach-visual::before,
@@ -1408,6 +1439,10 @@ summary:focus-visible {
     display: none;
   }
 
+  .brand-logo {
+    width: 165px;
+  }
+
   .header-call svg {
     width: 18px;
     height: 18px;
@@ -1474,8 +1509,8 @@ summary:focus-visible {
     gap: 34px;
   }
 
-  .approach-visual {
-    min-height: 320px;
+  .location-map iframe {
+    height: 320px;
   }
 
   .social-card {
@@ -1572,6 +1607,10 @@ summary:focus-visible {
 }
 
 @media (max-width: 420px) {
+  .brand-logo {
+    width: 145px;
+  }
+
   .brand-name {
     font-size: 8px;
   }
@@ -1614,5 +1653,14 @@ summary:focus-visible {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .offer-card:hover,
+  .service-card:hover {
+    transform: none;
+  }
+
+  .offer-card:hover .offer-art img {
+    transform: none;
   }
 }
