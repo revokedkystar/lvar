@@ -49,12 +49,24 @@ export default function ServicesPage() {
           </div>
           <Image
             className="services-feature-image reveal"
-            src="/img/offer.jpg"
+            src="/media/offer.27268bded22c.webp"
             alt="Leisure Vehicle & Auto Repairs minor and full service information"
             width={1254}
             height={1254}
-            sizes="(max-width: 720px) 100vw, 32vw"
+            preload
+            sizes="(max-width: 720px) min(330px, calc(100vw - 40px)), 32vw"
           />
+        </div>
+      </section>
+
+      <section className="service-audience-links section-pad">
+        <div className="container">
+          <p className="eyebrow">Find the right service</p>
+          <div className="service-audience-grid">
+            <a href="#pre-purchase"><strong>Cars &amp; everyday vehicles</strong><span>Inspections, servicing and repairs</span></a>
+            <a href="#servicing"><strong>Vans &amp; work vehicles</strong><span>Practical maintenance and diagnostics</span></a>
+            <a href="#habitation"><strong>Motorhomes &amp; campervans</strong><span>Habitation checks and vehicle care</span></a>
+          </div>
         </div>
       </section>
 

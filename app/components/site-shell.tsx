@@ -10,13 +10,13 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="Leisure Vehicle and Auto Repairs home">
-          <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={210} height={43} />
+          <Image className="brand-logo" src="/media/header.be89f38bd296.webp" alt="Leisure Vehicle & Auto Repairs" width={210} height={43} />
         </Link>
         <nav className="main-nav" aria-label="Main navigation">
           <Link href="/services">Services</Link>
           <Link href="/#offers">Offers</Link>
           <Link href="/#about">About</Link>
-          <Link href="/#contact">Contact</Link>
+          <Link href="/#enquire">Contact</Link>
         </nav>
         <details className="mobile-menu">
           <summary>Menu <span aria-hidden="true">+</span></summary>
@@ -24,11 +24,11 @@ export function SiteHeader() {
             <Link href="/services">Services</Link>
             <Link href="/#offers">Offers</Link>
             <Link href="/#about">About</Link>
-            <Link href="/#contact">Contact</Link>
+            <Link href="/#enquire">Contact</Link>
           </nav>
         </details>
         <a className="header-call" href="tel:+447456799745">
-          <Icon name="phone" /><span>{phone}</span>
+          <Icon name="phone" /><span>Call now</span><span className="header-phone">{phone}</span>
         </a>
       </div>
     </header>
@@ -42,7 +42,7 @@ export function SiteFooter() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link className="brand" href="/">
-              <Image className="brand-logo" src="/img/header.png" alt="Leisure Vehicle & Auto Repairs" width={210} height={43} />
+              <Image className="brand-logo" src="/media/header.be89f38bd296.webp" alt="Leisure Vehicle & Auto Repairs" width={210} height={43} />
             </Link>
             <p>Independent vehicle care for cars, vans, motorhomes and campervans.</p>
             <span className="footer-area">Newton Abbot · Torbay &amp; surrounding areas</span>
