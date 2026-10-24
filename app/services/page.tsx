@@ -5,9 +5,12 @@ import { Icon } from "../components/icons";
 const facebook = "https://www.facebook.com/leisurevehiclesandautorepairs";
 
 export const metadata: Metadata = {
-  title: "Vehicle Services in Newton Abbot & Torbay",
+  title: "Garage Services & Auto Repairs in Newton Abbot",
   description:
-    "Pre-purchase inspections, motorhome habitation checks, car and van servicing, diagnostics and repairs in Newton Abbot, Torbay and surrounding areas.",
+    "Car and van repairs, servicing and diagnostics, plus pre-purchase inspections and motorhome habitation checks from our Newton Abbot garage. Serving Torbay and nearby areas.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const habitationChecks = [
@@ -41,7 +44,7 @@ export default function ServicesPage() {
         <div className="container page-hero-layout">
           <div className="page-hero-inner">
             <p className="eyebrow reveal"><span className="status-dot" /> SERVICES · NEWTON ABBOT &amp; TORBAY</p>
-            <h1 className="reveal">Practical care for<br /><span>every kind of journey.</span></h1>
+            <h1 className="reveal">Car repairs &amp; servicing<br /><span>in Newton Abbot.</span></h1>
             <p className="page-lead reveal">
               Inspections, servicing and repairs for cars, vans, motorhomes and campervans. Tell us what you need and we’ll help you find the right next step.
             </p>

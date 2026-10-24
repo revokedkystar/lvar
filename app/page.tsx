@@ -1,7 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Icon } from "./components/icons";
+
+export const metadata: Metadata = {
+  title: "Garage & Auto Repairs in Newton Abbot",
+  description:
+    "Independent garage in Newton Abbot for car and van repairs, servicing and diagnostics. Motorhome checks and suitable mobile visits across Torbay and nearby areas.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const phone = "07456 799745";
 const facebook = "https://www.facebook.com/leisurevehiclesandautorepairs";
@@ -105,6 +115,21 @@ const processSteps = [
 
 const faqs = [
   {
+    question: "Where is your garage in Newton Abbot?",
+    answer:
+      "Our garage is at Unit 1 School Road Business Park, Newton Abbot, Devon, TQ12 2JU. Use the map on this page for directions, or call before visiting.",
+  },
+  {
+    question: "What areas do you cover around Newton Abbot and Torbay?",
+    answer:
+      "Our garage is based in Newton Abbot and we serve Torbay and surrounding areas. Mobile visits may be possible depending on your location, vehicle and the work required, so please check before arranging one.",
+  },
+  {
+    question: "Can you help with car and van repairs in Newton Abbot?",
+    answer:
+      "We provide car and van servicing, repairs and diagnostics from our Newton Abbot garage. Tell us your vehicle details and what is happening and we’ll discuss the suitable next step.",
+  },
+  {
     question: "How much does a pre-purchase inspection cost?",
     answer:
       "Pre-purchase inspections start from £40. The price and scope depend on the vehicle and are confirmed when you enquire.",
@@ -164,7 +189,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": "https://www.lvar.co.uk/#webpage",
         url: "https://www.lvar.co.uk/",
-        name: "Independent Vehicle Servicing, Repairs & Inspections | LVAR",
+        name: "Garage & Auto Repairs in Newton Abbot | LVAR",
         isPartOf: { "@id": "https://www.lvar.co.uk/#website" },
         about: { "@id": "https://www.lvar.co.uk/#localbusiness" },
         inLanguage: "en-GB",
@@ -198,19 +223,19 @@ export default function Home() {
                 Newton Abbot · Torbay · surrounding areas
               </p>
               <h1 className="reveal">
-                Spot costly problems
+                Garage & vehicle repairs
                 <br />
-                <span>before you buy.</span>
+                <span>in Newton Abbot.</span>
               </h1>
               <p className="hero-description reveal">
-                An independent pre-purchase inspection can help identify visible faults before you commit. We also service and repair cars, vans and motorhomes across Newton Abbot and Torbay.
+                Looking for a local garage? We repair and service cars and vans, run diagnostics, and carry out motorhome checks from our Newton Abbot base, serving Torbay and nearby areas.
               </p>
               <p className="hero-positioning reveal">
-                Independent local garage with 18+ years of hands-on experience in Newton Abbot &amp; Torbay — garage base with mobile visits available.
+                Independent garage in Newton Abbot with over 18 years of hands-on experience. Mobile visits may be available where suitable.
               </p>
               <div className="hero-actions reveal">
                 <a className="button button-gold" href={facebook} target="_blank" rel="noreferrer">
-                  Ask about an inspection <Icon name="arrow-up-right" />
+                  Ask about a repair <Icon name="arrow-up-right" />
                 </a>
                 <a className="button button-outline" href="tel:+447456799745">
                   <Icon name="phone" /> Call now

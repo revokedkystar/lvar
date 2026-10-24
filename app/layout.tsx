@@ -4,12 +4,25 @@ import { SiteFooter, SiteHeader } from "./components/site-shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.lvar.co.uk"),
   title: {
-    default: "Leisure Vehicle & Auto Repairs | Newton Abbot & Torbay",
-    template: "%s | Leisure Vehicle & Auto Repairs",
+    default: "Garage & Auto Repairs in Newton Abbot | LVAR",
+    template: "%s | LVAR",
   },
   description:
-    "Experienced vehicle servicing, repairs, diagnostics and pre-purchase inspections for cars, vans and motorhomes in Newton Abbot, Torbay and surrounding areas.",
+    "Looking for a garage in Newton Abbot? LVAR provides car and van repairs, servicing, diagnostics and motorhome checks in Newton Abbot, Torbay and nearby areas.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "Leisure Vehicle & Auto Repairs",
+    title: "Garage & Auto Repairs in Newton Abbot | LVAR",
+    description:
+      "Car and van repairs, servicing, diagnostics and motorhome checks from an independent garage in Newton Abbot, covering Torbay and nearby areas.",
+    url: "https://www.lvar.co.uk/",
+  },
   applicationName: "Leisure Vehicle & Auto Repairs",
   category: "Automotive",
 };
@@ -73,7 +86,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" data-scroll-behavior="smooth">
       <body>
         <script
           type="application/ld+json"
