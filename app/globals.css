@@ -1308,21 +1308,6 @@ summary:focus-visible {
   margin-top: 9px;
 }
 
-.cert-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--gold) !important;
-  font-size: 8px !important;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-}
-
-.cert-mark svg {
-  width: 14px;
-  height: 14px;
-}
-
 .check-list {
   display: grid;
   gap: 10px;

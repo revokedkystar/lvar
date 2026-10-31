@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 const habitationChecks = [
-  "Gas system check. Gas-It certified.",
   "230V and 12V electrical checks.",
   "Water system, heating and hot water.",
   "Windows, doors, seals and visual damp inspection.",
@@ -94,7 +93,7 @@ export default function ServicesPage() {
                 {habitationChecks.map((item) => <li key={item}><Icon name="check" />{item}</li>)}
               </ul>
             </div>
-            <div className="detail-aside"><span className="cert-mark"><Icon name="check" /> GAS-IT CERTIFIED</span><span>Ask about combining habitation and vehicle work.</span><a href={facebook} target="_blank" rel="noreferrer">Ask for a quote <Icon name="arrow-up-right" /></a></div>
+            <div className="detail-aside"><span>Ask about combining habitation and vehicle work.</span><a href={facebook} target="_blank" rel="noreferrer">Ask for a quote <Icon name="arrow-up-right" /></a></div>
           </article>
 
           <article className="detail-card reveal" id="servicing">
@@ -126,7 +125,7 @@ export default function ServicesPage() {
             <div className="detail-content">
               <h2>Repairs, diagnostics &amp; checks</h2>
               <p>Help with common repairs, investigating warning lights and getting your vehicle ready for the road.</p>
-              <div className="detail-tags"><span>MOT preparation &amp; repairs</span><span>Diagnostics</span><span>Brakes &amp; clutches</span><span>Timing belts</span><span>Gas testing</span><span>240V testing</span><span>Seasonal checks</span></div>
+              <div className="detail-tags"><span>MOT preparation &amp; repairs</span><span>Diagnostics</span><span>Brakes &amp; clutches</span><span>Timing belts</span><span>240V testing</span><span>Seasonal checks</span></div>
             </div>
             <div className="detail-aside"><span>Tell us the symptoms and vehicle details.</span><a href={facebook} target="_blank" rel="noreferrer">Discuss a repair <Icon name="arrow-up-right" /></a></div>
           </article>

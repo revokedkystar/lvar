@@ -66,7 +66,7 @@ const audienceSegments = [
     title: "Motorhomes & campervans",
     description:
       "Habitation checks and vehicle care to help you understand what needs attention before a trip.",
-    services: "Habitation · gas · electrical · water checks",
+    services: "Habitation · electrical · water checks",
     href: "/services#habitation",
   },
 ];
@@ -320,10 +320,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="credibility-strip" aria-label="Experience and service credentials">
+        <section className="credibility-strip" aria-label="Experience and services">
           <div className="container credibility-items">
             <div><strong>18+ years</strong><span>Hands-on experience</span></div>
-            <div><strong>Gas-It certified</strong><span>Motorhome habitation checks</span></div>
+            <div><strong>Habitation checks</strong><span>Motorhomes &amp; campervans</span></div>
             <div><strong>Newton Abbot</strong><span>Dedicated garage base</span></div>
             <div><strong>Mobile visits</strong><span>Available where suitable</span></div>
           </div>
